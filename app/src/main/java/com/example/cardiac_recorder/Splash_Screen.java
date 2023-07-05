@@ -65,7 +65,7 @@ public class Splash_Screen extends AppCompatActivity {
 
         if (firebaseAuth != null )
         {
-            Intent intent = new Intent(Splash_Screen.this, CRUD.class);
+            Intent intent = new Intent(Splash_Screen.this,CRUD.class);
             startActivity(intent);
             finish();
         }

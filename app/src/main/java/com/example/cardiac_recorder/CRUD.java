@@ -42,10 +42,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import android.widget.Toast;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 
 public class CRUD extends AppCompatActivity {
-
-    ArrayList<health_info_model> arrHealth_info = new ArrayList<>();
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -75,7 +76,7 @@ public class CRUD extends AppCompatActivity {
 
 
     private TextView date ,time ;
-    private EditText systolic_pressure, diastolic_pressure,heart_rate;
+    private  EditText  systolic_pressure, diastolic_pressure,heart_rate;
     private  String Status ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +101,7 @@ public class CRUD extends AppCompatActivity {
         }
 
 
-        toggle = new ActionBarDrawerToggle(CRUD.this, drawerLayout, R.string.open, R.string.close);
+        toggle = new ActionBarDrawerToggle(CRUD.this,drawerLayout, R.string.open, R.string.close);
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -111,32 +112,24 @@ public class CRUD extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 Intent intent;
-                switch (item.getItemId()) {
-
-                    case R.id.mHome:
-                        Toast.makeText(CRUD.this, "Clicked to Home", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
-                        break;
-
-                    case R.id.mProfile:
-                        Toast.makeText(CRUD.this, "Personal Information", Toast.LENGTH_SHORT).show();
-                        intent = new Intent(CRUD.this,Profile.class) ;
-                        startActivity(intent);
-                        break;
-
-                    case R.id.mAbout_App:
-                        Toast.makeText(CRUD.this, "About App", Toast.LENGTH_SHORT).show();
-                        intent = new Intent(CRUD.this,About.class) ;
-                        startActivity(intent);
-                        break;
-
-                    case R.id.mlog_out:
-                        firebaseAuth.signOut();
-                        Toast.makeText(CRUD.this, "Log Out Successful.", Toast.LENGTH_SHORT).show();
-                        intent = new Intent(CRUD.this,MainActivity.class) ;
-                        startActivity(intent);
-                        finish();
-                        break;
+                int itemId = item.getItemId();
+                if (itemId == R.id.mHome) {
+                    Toast.makeText(CRUD.this, "Clicked to Home", Toast.LENGTH_SHORT).show();
+                    drawerLayout.closeDrawers();
+                } else if (itemId == R.id.mProfile) {
+                    Toast.makeText(CRUD.this, "Personal Information", Toast.LENGTH_SHORT).show();
+                    intent = new Intent(CRUD.this, Profile.class);
+                    startActivity(intent);
+                } else if (itemId == R.id.mAbout_App) {
+                    Toast.makeText(CRUD.this, "About App", Toast.LENGTH_SHORT).show();
+                    intent = new Intent(CRUD.this, About.class);
+                    startActivity(intent);
+                } else if (itemId == R.id.mlog_out) {
+                    firebaseAuth.signOut();
+                    Toast.makeText(CRUD.this, "Log Out Successful.", Toast.LENGTH_SHORT).show();
+                    intent = new Intent(CRUD.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
 
                 return false;
