@@ -8,10 +8,19 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cardiac_Recorder"
         tools:targetApi="31">
+        <activity
+            android:name=".Forget_password"
+            android:exported="false" />
+        <activity
+            android:name=".CRUD"
+            android:exported="false" />
+        <activity
+            android:name=".Sign_Up"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
