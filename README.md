@@ -35,7 +35,7 @@ Cardiac Recorder is a simple, useful, and user-friendly Android application for 
 
 ## Documentation
 
-For detailed documentation, please refer to the [Cardiac Recorder Wiki](https://github.com/your-username/CardiacRecorder/wiki).
+For detailed documentation, please refer to the [Cardiac Recorder Wiki](https://github.com/saugataroyarghya/Cardiac_Recorder/wiki).
 
 ## License
 
