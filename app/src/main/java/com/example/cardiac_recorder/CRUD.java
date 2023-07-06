@@ -550,6 +550,5 @@ public class CRUD extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 }
