@@ -51,9 +51,8 @@ public class CRUDTest {
     public void testAll() {
 
         addData();
-
+        editData();
         testDelete();
-
 
     }
     @Test
@@ -90,7 +89,51 @@ public class CRUDTest {
 //
         assertEquals(prevCount,curCount-1);
     }
+
     @Test
+    public void editData(){
+        try {
+            Thread.sleep(3000); // Delay in milliseconds (e.g., 3000 ms = 3 seconds)
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        ///baki hay mera dost
+
+        onView(withId(R.id.recyclerView))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0,longClick()));
+
+
+        onView(ViewMatchers.withText("UPDATE")).perform(click());
+
+
+        onView(withId(R.id.udp)).perform(clearText());
+        onView(withId(R.id.udp)).perform(ViewActions.typeText("70"));
+
+        onView(withId(R.id.usp)).perform(clearText());
+        onView(withId(R.id.usp)).perform(ViewActions.typeText("110"));
+
+
+        onView(withId(R.id.uhr)).perform(clearText());
+        onView(withId(R.id.uhr)).perform(ViewActions.typeText("90"));
+
+        Espresso.pressBack(); //hide keyboard
+
+
+        int prevCount = getTotalItem();
+
+        onView(withId(R.id.button_update)).perform(click());
+
+        try {
+            Thread.sleep(1000); // Delay in milliseconds (e.g., 3000 ms = 3 seconds)
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        int curCount = getTotalItem();
+
+        assertEquals(prevCount,curCount);
+}
+
+        @Test
     public void testDelete(){
         try {
             Thread.sleep(3000); // Delay in milliseconds (e.g., 3000 ms = 3 seconds)
