@@ -6,7 +6,7 @@ Cardiac Recorder is a simple, useful, and user-friendly Android application for 
 
 <div style="display:flex;">
   <img src="screenshots/splash_screen.jpg" alt="Splash Screen" width="300"/>
-  <img src="screenshots/login_screen.jpgg" alt="Log In Screen" width="300"/>
+  <img src="screenshots/login_screen.jpg" alt="Log In Screen" width="300"/>
 </div>
 
 <div style="display:flex;">
