@@ -78,6 +78,7 @@ public class CRUDTest {
         System.out.println(prevCount);
 
         onView(withId(R.id.button_insert)).perform(click());
+        Espresso.pressBack();
 
         try {
             Thread.sleep(3000); // Delay in milliseconds (e.g., 3000 ms = 3 seconds)
@@ -86,7 +87,8 @@ public class CRUDTest {
         }
         int curCount = getTotalItem();
         System.out.println(curCount);
-//
+
+
         assertEquals(prevCount,curCount-1);
     }
 
