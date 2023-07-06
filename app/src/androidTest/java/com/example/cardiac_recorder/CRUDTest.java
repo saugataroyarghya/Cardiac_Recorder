@@ -67,7 +67,7 @@ public class CRUDTest {
         onView(withId(R.id.time)).perform(click());
         onView(ViewMatchers.withText("OK")).perform(click());
 
-        onView(withId(R.id.dp)).perform(ViewActions.typeText("80"));
+        onView(withId(R.id.dp)).perform(ViewActions.typeText("82"));
         onView(withId(R.id.sp)).perform(ViewActions.typeText("120"));
         onView(withId(R.id.hr)).perform(ViewActions.typeText("100"));
 
@@ -87,7 +87,6 @@ public class CRUDTest {
         }
         int curCount = getTotalItem();
         System.out.println(curCount);
-
 
         assertEquals(prevCount,curCount-1);
     }
