@@ -5,18 +5,30 @@ Cardiac Recorder is a simple, useful, and user-friendly Android application for 
 ## Screenshots
 
 <div style="display:flex;">
-  <img src="screenshots/splash_screen.png" alt="Splash Screen" width="300"/>
-  <img src="screenshots/login_screen.png" alt="Log In Screen" width="300"/>
+  <img src="screenshots/splash_screen.jpg" alt="Splash Screen" width="300"/>
+  <img src="screenshots/login_screen.jpgg" alt="Log In Screen" width="300"/>
 </div>
 
 <div style="display:flex;">
-  <img src="screenshots/register_screen.png" alt="Register Screen" width="300"/>
-  <img src="screenshots/dashboard.png" alt="Dashboard" width="300"/>
+  <img src="screenshots/register_screen.jpg" alt="Register Screen" width="300"/>
+  <img src="screenshots/forget_password_screen.jpg" alt="Forget Password" width="300"/>
 </div>
 
 <div style="display:flex;">
-  <img src="screenshots/insert_page.png" alt="Insert Page" width="300"/>
+  <img src="screenshots/recycleView_screen.jpg" alt="Recycle View " width="300"/>
+   <img src="screenshots/dashboard.jpg" alt="Dashboard" width="300"/>
   <!-- Add more screenshots here -->
+</div>
+<div style="display:flex;">
+  <img src="screenshots/user_profile_screen.jpg" alt="User Profile" width="300"/>
+  <img src="screenshots/Edit_user_profile_screen.jpg" alt="Update user profile" width="300"/>
+</div>
+<div style="display:flex;">
+  <img src="screenshots/insert_layout_screen.jpg" alt="Inser Health info " width="300"/>
+</div>
+<div style="display:flex;">
+  <img src="screenshots/dialogue_screen.jpg" alt="Dialogue Box for operation" width="300"/>
+  <img src="screenshots/update_layout_screen.jpg" alt="Update health info" width="300"/>
 </div>
 
 ## Features
