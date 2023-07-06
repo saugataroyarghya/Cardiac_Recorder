@@ -543,7 +543,6 @@ public class CRUD extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-
                             Toast.makeText(CRUD.this, "Health Information Update Successfully Done.", Toast.LENGTH_SHORT).show();
 
                         } else {
