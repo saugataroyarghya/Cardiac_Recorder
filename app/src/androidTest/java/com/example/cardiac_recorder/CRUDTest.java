@@ -1,5 +1,6 @@
 package com.example.cardiac_recorder;
 
+import static org.junit.Assert.*;
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.clearText;
@@ -41,12 +42,18 @@ import java.util.Objects;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 
+/**
+ * ALl CRUD operations
+ */
 public class CRUDTest {
 
 
     @Rule
     public ActivityScenarioRule<CRUD> activityScenarioRule = new ActivityScenarioRule<CRUD>(CRUD.class);
 
+    /**
+     * UI test Create all the function for create Delete and update function.
+     */
     @Test
     public void testAll() {
 
@@ -55,6 +62,10 @@ public class CRUDTest {
         testDelete();
 
     }
+
+    /***
+     * Add data method . where add the health info data
+     */
     @Test
     public void addData(){
 
@@ -90,8 +101,11 @@ public class CRUDTest {
         assertEquals(prevCount,curCount-1);
     }
 
+    /**
+     * Edit data method . where update a specific health info data
+     */
     @Test
-    public void editData(){
+    public void editData() {
         try {
             Thread.sleep(3000); // Delay in milliseconds (e.g., 3000 ms = 3 seconds)
         } catch (InterruptedException e) {
@@ -100,7 +114,7 @@ public class CRUDTest {
         ///baki hay mera dost
 
         onView(withId(R.id.recyclerView))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0,longClick()));
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, longClick()));
 
 
         onView(ViewMatchers.withText("UPDATE")).perform(click());
@@ -130,9 +144,11 @@ public class CRUDTest {
         }
         int curCount = getTotalItem();
 
-        assertEquals(prevCount,curCount);
-}
-
+        assertEquals(prevCount, curCount);
+    }
+    /***
+     * Delete  data method . where Delete a health info data from database
+     */
         @Test
     public void testDelete(){
         try {
@@ -160,6 +176,10 @@ public class CRUDTest {
         onView(withId(R.id.recyclerView)).perform();
     }
 
+    /**
+     * here count the number of element exist in the recycle view
+     * @return the number of element in the recycle view
+     */
     private int getTotalItem(){
         final int[] initialItemCount = new int[1];
         activityScenarioRule.getScenario().onActivity(activity -> {
@@ -170,6 +190,9 @@ public class CRUDTest {
         return initialItemCount[0];
     }
 
+    /**
+     * here mainly work with the recycle view
+     */
     public static class MyViewAction {
 
         public static ViewAction clickChildViewWithId(final int id) {

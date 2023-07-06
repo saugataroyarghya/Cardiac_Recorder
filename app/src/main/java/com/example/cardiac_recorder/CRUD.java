@@ -1,5 +1,6 @@
 package com.example.cardiac_recorder;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,6 +46,10 @@ import java.util.HashMap;
 import android.widget.Toast;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+
+/**
+ * the CRUD activity begins here.
+ */
 
 public class CRUD extends AppCompatActivity {
 
@@ -106,6 +111,9 @@ public class CRUD extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        /**
+         * Navigation Drawer of the App
+         */
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")
             @Override
@@ -162,6 +170,9 @@ public class CRUD extends AppCompatActivity {
         recyclerView.setAdapter(show_adapter);
 
 
+        /**
+         * Heath info data fetching from firebase
+         */
         databaseReference.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
@@ -185,7 +196,9 @@ public class CRUD extends AppCompatActivity {
             }
         });
 
-
+        /**
+         * Recycle View Create Read Delete Update operations
+         */
         show_adapter.setOnItemClickListener(new health_info_Adapter.LongClickListener() {
             @Override
             public View.OnLongClickListener onItemClick(int position, View view) {
@@ -341,7 +354,9 @@ public class CRUD extends AppCompatActivity {
         });
 
 
-
+        /**
+         * Add Health info Data
+         */
 
         button1 = findViewById(R.id.insert);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -523,6 +538,10 @@ public class CRUD extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Health info insertion model
+     */
 
     private void Health_Info(){
 
